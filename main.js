@@ -13,6 +13,6 @@ for (let contador = 0; contador < listaDeTeclas.length; contador ++){
 
     tecla.onclick = function(){tocaSom(idAudio)};
     tecla.onkeydown = function() {tecla.classList.add('ativa')}; //função ADD adiciona a classe "ativa" que vai deixar a tecla na cor vermelha. o JS passa adicionar a classe ao botão falta remover a classe para apagar o vermelho:
-    tecla.onkeyup = function()[tecla.classList.remove('ativa')]; //função REMOVE remove a classe ativa quer deixa vermelho a tecla. adicioando na variavel função quando a tecla sobe.
-    
+    tecla.onkeyup = function(){tecla.classList.remove('ativa')}; //função REMOVE remove a classe ativa quer deixa vermelho a tecla. adicioando na variavel função quando a tecla sobe.
+
 }
