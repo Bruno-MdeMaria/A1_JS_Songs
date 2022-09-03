@@ -1,6 +1,15 @@
 
 function tocaSom(idElementoAudio) {
-    document.querySelector(idElementoAudio).play();
+    const elemento = document.querySelector(idElementoAudio).play();
+    
+    if (elemento && elemento.localName === 'audio') {
+        elemento.play();
+    }
+    else {
+        
+        console.log('Elemento não encontrado ou seletor inválido');
+    }
+
 }
 
 const listaDeTeclas = document.querySelectorAll('.tecla');  // seletor ALL cria uma lista que foi armazenada dentro da constante listaDeTeclas.
@@ -17,7 +26,7 @@ for (let contador = 0; contador < listaDeTeclas.length; contador ++){
     
     tecla.onkeydown = function(evento) {
 
-        if (evento.code === 'Space' || 'Enter') // as duas barras || tem a mesma função do OR(ou).
+        if (evento.code === 'Space' || evento.code === 'Enter') // as duas barras || tem a mesma função do OR(ou).
         tecla.classList.add('ativa');
     } //função ADD adiciona a classe "ativa" que vai deixar a tecla na cor vermelha. o JS passa adicionar a classe ao botão falta remover a classe para apagar o vermelho:
    
